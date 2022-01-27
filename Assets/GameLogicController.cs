@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// class implementing the game controller
+// contains method to generate enemies according to level
 public class GameLogicController : MonoBehaviour
 {
+    // delegate user menu to start or pause when needed
     public delegate void gameMenuHandlerDelegation(int whatToDo);
     public static event gameMenuHandlerDelegation menuHandlerDelegation;
 
+    // data for current level
     public int startLevel = 0;
     int currentLevel = 0;
     bool currentlyPlaying = false;
@@ -30,27 +34,32 @@ public class GameLogicController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        // get Enemy drones that will be cloned
         enemyDroneGuardian = GameObject.FindGameObjectWithTag(InGameComunicationCodes.enemyDroneGuardian);
         enemyDroneCollector = GameObject.FindGameObjectWithTag(InGameComunicationCodes.enemyDroneCollector);
 
         menuHandlerDelegation(InGameComunicationCodes.showStartMenu);
         //Debug.Log("INFORMING ABOUT GAME LOGIC CONTROLLER START MENU");
 
-        enemy.EnemyEventSubscription += enemyDroneEventHappenend;
-        MicrophoneInputControler.microphoneOverThreshold += loudNoiseHandler;
-
         loadLevel();
         updateCurrentLevel();
+    }
+
+    void Awake () {
+        enemy.EnemyEventSubscription += enemyDroneEventHappenend;
+        MicrophoneInputControler.microphoneOverThreshold += loudNoiseHandler;
     }
 
     // Update is called once per frame
     void Update() {
     }
 
+    // also subscribed to microphone input noise exceedence event
     void loudNoiseHandler(float db_, Vector3 position_) {
         //Debug.Log("Picked up loud noise"+db_);
     }
 
+    // when drones get killed or else, they will informe this class
     void enemyDroneEventHappenend(int droneType, int whatHappend) {
         Debug.Log("Drone Event Happened");
         if (whatHappend == InGameComunicationCodes.droneHasDied) {
@@ -58,6 +67,7 @@ public class GameLogicController : MonoBehaviour
         }
     }
 
+    // action to take place when a drone was destroyed
     void enemyDroneGotDestroyed(int droneType) {
         if (droneType == InGameComunicationCodes.droneGuardianType) {
             currentlyActiveDroneGuardians -= 1;
@@ -67,6 +77,7 @@ public class GameLogicController : MonoBehaviour
         updateCurrentLevel();
     }
 
+    // loading next level data from LevelData class
     void loadLevel() {
         droneGuardiansAtOnce = LevelData.getGAtOnce(currentLevel);
         droneCollectorAtOnce = LevelData.getCAtOnce(currentLevel);
@@ -76,8 +87,10 @@ public class GameLogicController : MonoBehaviour
         droneCollectorSpeed = LevelData.getCSpeed(currentLevel);
     }
 
+    // Update current drone numbers to match specs defined in leveldata
     void updateCurrentLevel() {
-        Debug.Log("GAME UPDATE LEVEL:" +(droneGuardiansAtOnce - currentlyActiveDroneGuardians) + " -- " + droneGuardiansTotal);
+        Debug.Log("GAME UPDATE LEVEL:" +(droneGuardiansAtOnce - currentlyActiveDroneGuardians) +
+            " -- " + droneGuardiansTotal);
         int generateNumberOfGuardians = System.Math.Min(
             (droneGuardiansAtOnce - currentlyActiveDroneGuardians), droneGuardiansTotal);
         int generateNumberOfCollector = System.Math.Min(
@@ -103,6 +116,7 @@ public class GameLogicController : MonoBehaviour
         }
     }
 
+    // increase one level when old one was completed
     void oldLevelCompleted() {
         currentLevel += 1;
         Debug.Log("Changed Level to: "+currentLevel);

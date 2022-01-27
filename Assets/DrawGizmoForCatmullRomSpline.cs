@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Draw gizmo for catmull rom spline
 public class DrawGizmoForCatmullRomSpline : MonoBehaviour
 {
     public string tagOfCheckpoints = "enemy_waypoint";

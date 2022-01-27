@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Draw gizmo for bezier curve:
 public class DrawGizmoForBezierCurve : MonoBehaviour
 {
     public string tagOfCheckpoints = "enemy_waypoint";
@@ -12,7 +13,7 @@ public class DrawGizmoForBezierCurve : MonoBehaviour
     private List<Transform> checkPoints;
     private int currentBezierPosition = 0;
 
-	//Display without having to press play
+	//Display the bezier curve gizmo without having to press play
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.blue;
@@ -59,14 +60,13 @@ public class DrawGizmoForBezierCurve : MonoBehaviour
         DisplayBezierCurve(p0, p1, p2, p3);
     }
 
-	//Display a spline between 2 points derived with the Catmull-Rom spline algorithm
+	//Display a curve between ywo points gotten from bezier curve algorithm
 	void DisplayBezierCurve(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
 	{
 		//The start position of the line
 		Vector3 lastPos = p0;
 
-		//The spline's resolution
-		//Make sure it's is adding up to 1, so 0.3 will give a gap, but 0.2 will work
+		//Make sure it's is adding up to 1, so 0.3 will give a gap, but 0.02 will work
 		float resolution = 0.02f;
 
 		//How many times should we loop?
@@ -77,7 +77,7 @@ public class DrawGizmoForBezierCurve : MonoBehaviour
 			//Which t position are we at?
 			float t = i * resolution;
 
-			//Find the coordinate between the end points with a Catmull-Rom spline
+			//Find the coordinate between the end points with a bezier curve
 			Vector3 newPos = BezierCurveUtilities.GetBezierCurvePosition(t, p0, p1, p2, p3);
 
 			

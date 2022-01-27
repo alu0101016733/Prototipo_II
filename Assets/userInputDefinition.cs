@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// define variables for user interacion:
 public class userInputDefinition : MonoBehaviour
 {
   public static int Fire = 2;

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This clase is more a namespace, to allow different files to
+// comunicate with each other sending int codes, and let them stay
+// human redible.
+// It also implements other information needed by the game for en easy access
+// to a number of variables that could need adjustment
 public class InGameComunicationCodes : MonoBehaviour
 {
     // Codes

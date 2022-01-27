@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// move object aling catmull rom spline
 public class MoveAlongCatmullRomSpline : MoveAlongPath
 {
     private List<Transform> checkPoints; // checkoints drone will follow
     
     // Start is called before the first frame update
+    // get all points and generate random path
     void Start()
     {
         checkPoints = new List<Transform>();
@@ -20,6 +22,7 @@ public class MoveAlongCatmullRomSpline : MoveAlongPath
         currentPosition = nextPosition;
     }
 
+    // call update methods
     void FixedUpdate() {
         if (currentlyActive) {
             currentPosition = nextPosition;
@@ -29,6 +32,7 @@ public class MoveAlongCatmullRomSpline : MoveAlongPath
         }
     }
 
+    // update the current position of the gameObject to follow path
     void UpdatePosition() {
         curPos += Time.deltaTime * speedModifier;
         if (Mathf.FloorToInt(curPos) >= checkPoints.Count) {
@@ -43,7 +47,7 @@ public class MoveAlongCatmullRomSpline : MoveAlongPath
         GetComponent<Transform>().LookAt(nextPosition);
     }
 
-
+    // does what the function name suggests
     Vector3 GetNextPositionAccordingToCatmullRomSpline(int pos)
 	{
 		//The 4 points we need to form a spline between p1 and p2

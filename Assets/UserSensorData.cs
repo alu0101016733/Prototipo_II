@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Enables us to get sensor data from smartphone
 public class UserSensorData : MonoBehaviour
 {
     public delegate void accelerationChange(Vector3 accVec);
@@ -21,6 +22,7 @@ public class UserSensorData : MonoBehaviour
         StartCoroutine(enableCompass());
     }
 
+    // subscribe to own delegates in case no one else subscribes
     void Awake() {
         accChange += emptyForAcceleration;
         comChange += emptyForCompassChange;
@@ -29,7 +31,7 @@ public class UserSensorData : MonoBehaviour
     void emptyForAcceleration(Vector3 acc) {}
     void emptyForCompassChange(Quaternion comVec) {}
 
-    // Update is called once per frame
+    // Update sensor data
     void Update()
     {
         if (Input.compass.enabled) {
@@ -43,6 +45,7 @@ public class UserSensorData : MonoBehaviour
         }
     }
 
+    // get compass data
     IEnumerator enableCompass() {
         yield return new WaitForSeconds(2);
         Input.compass.enabled = true;

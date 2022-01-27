@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Basic testing for gvrReticlePointer from google cardboard
+// Just changes the color when function assigned to an object
 public class changeColorWhenLooking : MonoBehaviour
 {
     public void Red() {

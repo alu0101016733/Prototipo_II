@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Base class for heritance for MoveAlongPath classes
+// contains basic methods and variables needed by the other classes
 public class MoveAlongPath : MonoBehaviour
 {
     public string tagOfCheckpoints = "enemy_waypoint";
@@ -30,6 +32,7 @@ public class MoveAlongPath : MonoBehaviour
     //     }
     // }
 
+    // instead of moving on a curve, move towards the user
     public void moveTowardsUser() {
         attackSpeed += speedIncreaseWhenUserAttacking * Time.deltaTime;
         Vector3 targetDirection = attackPosition - transform.position;
@@ -40,6 +43,8 @@ public class MoveAlongPath : MonoBehaviour
         timeAttackInProgress += Time.deltaTime;
     }
 
+    // change the mode from moving along curve, to moving directly
+    // towards the user
     public void setToUserAttackMode(Vector3 toPos) {
         timeAttackInProgress = 0f;
         attackSpeed = speedModifier;

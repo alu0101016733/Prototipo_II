@@ -4,8 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 
+// Microphone input control, will pick up raw microphone data and convert
+// it to a single variable defining the loudness of the user, if it exceeds
+// a certain threshold it will delegate to others
 public class MicrophoneInputControler : MonoBehaviour
 {
+    // delegate others when user too loud
     public delegate void microphoneLoudnessDelegation(float peak_, Vector3 position_);
     public static event microphoneLoudnessDelegation microphoneOverThreshold;
 
@@ -17,10 +21,12 @@ public class MicrophoneInputControler : MonoBehaviour
     int qSamples_ = 1024;
     float referenceValue = 0.1f;
 
+    // initialize microphone
     void Start() {
         InitMic();
     }
 
+    // update microphone data listened to
     void Update() {
         if (isInitialized_) {
             MicLoudness = LevelMax ();
@@ -47,6 +53,7 @@ public class MicrophoneInputControler : MonoBehaviour
         }
     }
     
+    // stop the microphone
     void StopMicrophone() {
         Microphone.End(microphone_);
     }

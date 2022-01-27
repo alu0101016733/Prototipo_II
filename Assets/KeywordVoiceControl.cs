@@ -4,14 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// comment the following to lines whe exporting to android
 // using UnityEngine.Windows.Speech;
 // using System.Linq;
 
+// class to hold voice control for the game, only works on windows
 public class KeywordVoiceControl : MonoBehaviour
 {
     public delegate void userSpokenCommand(int commandCode);
     public static event userSpokenCommand KeywordRecognizerEvent;
 
+    // COMMENT THE FOLLOWING lines until the end of the file
+    // whe exporting to android:
     // private KeywordRecognizer keywordRecognizer_ = null;
     // private Dictionary<string, System.Action> keywords_ = new Dictionary<string, System.Action>();
     // private string currentWord_;
