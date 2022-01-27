@@ -10,7 +10,7 @@ public class LevelData : MonoBehaviour
     static int[] droneCollectorAtOnce = {0, 1, 2, 2};
     static int[] droneGuardiansTotal = {2, 5, 10, 30};
     static int[] droneCollectorTotal = {0, 2, 6, 8};
-    static float[] droneGuardiansSpeed = {.005f, .1f, .2f, .4f};
+    static float[] droneGuardiansSpeed = {.005f, .01f, .02f, .04f};
     static float[] droneCollectorSpeed = {.01f, .1f, .2f, .4f};
 
     // get droneGuardiansAtOnce

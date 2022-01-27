@@ -40,7 +40,6 @@
      <Compile Include="Assets\BezierCurveUtilities.cs" />
      <Compile Include="Assets\ButtonOnClickEvents.cs" />
      <Compile Include="Assets\CatmullRomSplineUtilities.cs" />
-     <Compile Include="Assets\CatmullSplines.cs" />
      <Compile Include="Assets\DrawGizmoForBezierCurve.cs" />
      <Compile Include="Assets\DrawGizmoForCatmullRomSpline.cs" />
      <Compile Include="Assets\GameLogicController.cs" />
@@ -176,7 +175,6 @@
      <Compile Include="Assets\MoveAlongBezierCurve.cs" />
      <Compile Include="Assets\MoveAlongCatmullRomSpline.cs" />
      <Compile Include="Assets\MoveAlongPath.cs" />
-     <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\UserCharacter.cs" />
      <Compile Include="Assets\UserSensorData.cs" />
      <Compile Include="Assets\bullet.cs" />
