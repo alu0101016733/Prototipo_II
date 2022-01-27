@@ -90,59 +90,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11428}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11844}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12080}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 12334}
     - Class: 114
-      Script: {instanceID: 12474}
+      Script: {instanceID: 12472}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12480}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12508}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12540}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12964}
+      Script: {instanceID: 12962}
     - Class: 114
-      Script: {instanceID: 12988}
+      Script: {instanceID: 12986}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13060}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13390}
+      Script: {instanceID: 13388}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13858}
     - Class: 114
-      Script: {instanceID: 13904}
+      Script: {instanceID: 13900}
     - Class: 114
-      Script: {instanceID: 14112}
+      Script: {instanceID: 14108}
     - Class: 114
-      Script: {instanceID: 14120}
+      Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14166}
+      Script: {instanceID: 14162}
     - Class: 114
-      Script: {instanceID: 14176}
+      Script: {instanceID: 14172}
     - Class: 114
-      Script: {instanceID: 14464}
+      Script: {instanceID: 14460}
     - Class: 114
-      Script: {instanceID: 14604}
+      Script: {instanceID: 14600}
     - Class: 114
-      Script: {instanceID: 14688}
+      Script: {instanceID: 14684}
     - Class: 114
-      Script: {instanceID: 14714}
+      Script: {instanceID: 14710}
     - Class: 114
-      Script: {instanceID: 14738}
+      Script: {instanceID: 14734}
     - Class: 114
-      Script: {instanceID: 14844}
+      Script: {instanceID: 14840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -230,12 +230,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Gvr.Internal
     className: EditorCameraOriginDict
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PauseMenu
   - hash:
       serializedVersion: 2
       Hash: eb4085edf5f090ff50a724e7189a14c9
@@ -826,12 +820,6 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 8ba1fcc5efc8c2197edd31bfbd5e380b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CatmullSplines
-  - hash:
-      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1181,4 +1169,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/unity/Desktop/spaceDroneAlpha.apk
+  playerPath: C:/Users/unity/Prototipo_VR/spaceDroneAlpha.apk
