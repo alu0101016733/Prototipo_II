@@ -36,6 +36,7 @@ public class gun : MonoBehaviour
           bulletClone.GetComponent<bullet>().active = true;
           bulletClone.GetComponent<bullet>().initialVelocity = bulletSpeed;
           bulletClone.GetComponent<bullet>().DeleteYourselfAfter();
+          bulletClone.GetComponent<bullet>().addBulletTrail();
           lastFired = 0f;
         }
       }

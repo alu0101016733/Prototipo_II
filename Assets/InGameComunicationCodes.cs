@@ -20,7 +20,7 @@ public class InGameComunicationCodes : MonoBehaviour
     // Limits:
     static public float microphoneLimitsUnitlCall = .1f;
     static public float loudnessDecreaseOverDistanceOne = 1f;
-    static public float loudnessSufficientToAttack = 0.00005f;
+    static public float loudnessSufficientToAttack = 0.005f;
 
     // Tags:
     static public string enemyMeshTag = "enemy_drone";

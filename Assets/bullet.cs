@@ -37,5 +37,12 @@ public class bullet : MonoBehaviour
     // Debug.Log("I GOT DESTROYED");
     Destroy(gameObject, sec_);
   }
+
+  public void addBulletTrail() {
+    GameObject trailPrefab = Resources.Load("EtherialStreaksTrail") as GameObject;
+    GameObject bulletTrail = Instantiate(trailPrefab, transform.position, Quaternion.identity) as GameObject;
+    bulletTrail.transform.parent = gameObject.transform;
+    Destroy(bulletTrail, 1f);
+  }
   
 }
