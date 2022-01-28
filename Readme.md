@@ -32,7 +32,7 @@ Para dar una idea de la cantidad de posibles caminos que pueden tomar los drones
 
 ## Descripción de archivos
 
-**Todos los archivos se pueden encontrar en la carpeta AllScripts**
+**Todos los archivos se pueden encontrar en la carpeta Assets/AllScripts**
 
 Tambien es importante la asignacion de los mismos ficheros a los distintos objetos en unity para que funciona correctamente, pero para dar una idea inicial de que estan haciendo los ficheros:
 
